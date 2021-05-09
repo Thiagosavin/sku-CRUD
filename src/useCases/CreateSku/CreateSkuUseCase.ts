@@ -2,7 +2,6 @@ import ISkuRepository from '../../repositories/ISkuRepository';
 import { ICreateSkuDTO } from './CreateSkuDTO';
 import AppError from '../../shared/errors'
 import { Sku } from '../../entities/Sku';
-import { FormatSku } from '../../shared/helper/formatSKU';
 
 export class CreateSkuUseCase {
   constructor(
