@@ -1,15 +1,15 @@
 import { FakeSkuRepository } from '../../repositories/implementations/FakeSkuRepository';
-import { FindSkuController } from './EditSkuController';
-import { FindSkuUseCase } from './EditSkuUseCase';
+import { EditSkuController } from './EditSkuController';
+import { EditSkuUseCase } from './EditSkuUseCase';
 
 const fakeSkusRepository = new FakeSkuRepository();
 
-const findSkuByIdUseCase = new FindSkuUseCase(
+const editSkuUseCase = new EditSkuUseCase(
   fakeSkusRepository,
 );
 
-const findSkuByIdController = new FindSkuController(
-  findSkuByIdUseCase,
+const editSkuController = new EditSkuController(
+  editSkuUseCase,
 );
 
-export { findSkuByIdController, findSkuByIdUseCase };
+export { editSkuController, editSkuUseCase };

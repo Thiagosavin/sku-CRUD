@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { FormatSku } from 'shared/helper/formatSKU';
+import { FormatSku } from '../../shared/helper/formatSKU';
 import { CreateSkuUseCase } from './CreateSkuUseCase';
 
 export class CreateSkuController {

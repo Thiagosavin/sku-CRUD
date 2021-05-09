@@ -33,19 +33,18 @@ describe('Save new Skun UseCase', () => {
     )
   })
 
-  test('Should be able to find a sku by the sku id', async () => {
+  test('Should be able to edit a sku name', async () => {
     await skusRepository.save(skuBody)
-    const result = await editSkuUseCase.execute(43264)
+    const result = await editSkuUseCase.execute(43264, { name: 'teste' })
 
-    expect(result.sku).toEqual(43264)
+    expect(result.name).toEqual('teste')
   })
 
-  test('Should be throw an error message because the id was not found ', async () => {
+  test('Should be throw an error message because sku not found ', async () => {
     try {
-      await editSkuUseCase.execute(43264)
+      await editSkuUseCase.execute(43264, { name: 'teste' })
     } catch (err) {
-      expect(err.message).toEqual('Informed sku does not exist.')
+      expect(err.message).toEqual('No sku found.')
     }
   })
-
 })

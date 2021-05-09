@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { FormatSku } from 'shared/helper/formatSKU';
+import { FormatSku } from '../../shared/helper/formatSKU';
 import { DeleteSkuUseCase } from './DeleteSkuUseCase';
 export class DeleteSkuController {
   constructor(private deleteSkuController: DeleteSkuUseCase) { }

@@ -9,12 +9,12 @@ export class EditSkuUseCase {
   async execute(sku: number, data: IEditSkuDTO) {
     let skuObj = await this.skusRepository.findBySku(sku)
     if (!skuObj) {
-      throw new AppError('No sku found')
+      throw new AppError('No sku found.')
     }
     for (const key in data) {
       skuObj[key] = data[key]
     }
-    await this.skusRepository.edit(skuObj)
-    return this.skusRepository
+    const result = await this.skusRepository.edit(skuObj)
+    return result
   }
 }

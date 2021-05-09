@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { FormatSku } from 'shared/helper/formatSKU';
+import { FormatSku } from '../../shared/helper/formatSKU';
 import { FindSkuUseCase } from './FindSkuUseCase';
 export class FindSkuController {
   constructor(private findSkuController: FindSkuUseCase) { }
